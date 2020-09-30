@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <Head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <Title>Mesto</Title>
+        <link rel="stylesheet" type="text/css" href="pages/index.css">
+    </Head>
+    <body class="body">
+        <header class="header">
+          <img class="logo" src="./images/logo.svg" alt="logo">
+          <div class="line"></div>
+        </header>
+        <section class="profile">
+          <img class="profile__avatar" src="./images/avatar.png" alt="ваше фото">
+          <div class="profile__content">
+            <h2 class="profile__name">имя</h2>
+            <p class="profile__surname">род занятий</p>
+            <img class="profile__editor" src="./images/ручка.svg" alt="редактировать">
+          </div>
+            <button class="profile__add-button"><img class="profile__add-button-img" src="./images/плюсик.svg" alt="картинка добавить"></button>
+        </section>
+        <main class="elements">
+          <div class="cards">
+            <div class="card">
+              <img class="card__image" src="./images/Карачаевск.jpg" alt="pic">
+              <div class="card__content">
+                <p class="card__text">Карачаевск</p>
+                <img class="card__like" src="./images/лайк.svg" alt="like">
+              </div>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./images/Домбай.jpg" alt="pic">
+              <div class="card__content">
+                <p class="card__text">Домбай</p>
+                <img class="card__like" src="./images/лайк.svg" alt="like">
+              </div>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./images/Эльбрус.jpg" alt="pic">
+              <div class="card__content">
+                <p class="card__text">Гора Эльбрус</p>
+                <img class="card__like" src="./images/лайк.svg" alt="like">
+              </div>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./images/Домбай.jpg" alt="pic">
+              <div class="card__content">
+                <p class="card__text">Домбай</p>
+                <img class="card__like" src="./images/лайк.svg" alt="like">
+              </div>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./images/Эльбрус.jpg" alt="pic">
+              <div class="card__content">
+                <p class="card__text">Гора Эльбрус</p>
+                <img class="card__like" src="./images/лайк.svg" alt="like">
+              </div>
+            </div>
+            <div class="card">
+              <img class="card__image" src="./images/Карачаевск.jpg" alt="pic">
+              <div class="card__content">
+                <p class="card__text">Карачаево-Черкесская</p>
+                <img class="card__like" src="./images/лайк.svg" alt="like">
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer class="footer">
+          <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+        <section class="popap">
+          
+          <div class="popap__container">
+            <img class="popap__close-icon" src="./images/крестичек.svg" alt="картинка закрытия">
+            <form class="popap__info">
+              <fieldset class="popap__info-text">
+                <h2 class="popap__heading">Редактировать профиль</h2>
+                <input type="text" class="popap__name" placeholder="Имя">
+                <div class="popap__line"></div>
+                <input type="text" class="popap__secondname" placeholder="профессия">
+                <div class="popap__line"></div>
+                <button class="popap__submit-button">Сохранить</button>
+              </fieldset>
+            </form>
+          </div>
+        </section> 
+        <script src="script.js"></script>
+    </body>
+</html>

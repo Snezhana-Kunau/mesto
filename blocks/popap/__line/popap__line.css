@@ -1,0 +1,12 @@
+.popap__line {
+    opacity: 0.2;
+    border: 1px solid #000000;
+    max-width: 358px;
+    margin: auto;
+}
+
+@media screen and (max-width: 320px){
+    .popap__line{
+        margin: 0 22px 30px;
+    }
+}

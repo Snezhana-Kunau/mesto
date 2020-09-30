@@ -1,0 +1,23 @@
+.profile__editor {
+    box-sizing: border-box;
+    border: 1px solid #ffffff;
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 19px;
+    right: 0;
+}
+
+.profile__editor:hover {
+    opacity: .5;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 320px){
+    .profile__editor{
+        width: 18px;
+        height: 18px;
+    }
+}

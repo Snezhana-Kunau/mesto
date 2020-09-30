@@ -1,0 +1,11 @@
+.popap__info-text {
+    width: 93%;
+    margin: auto;
+    border: none;
+    padding: 0;
+}
+@media screen and (max-width: 320px){
+    .popap__info-text{
+        width: 100%;
+    }
+}
