@@ -1,15 +1,17 @@
 .profile__surname {
-    font-family: Inter;
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 22px;
     color: #FFFFFF;
     width: 90%;
-    height: 100%;
     background: none;
     border: none;
     margin-top: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 320px){
@@ -17,5 +19,6 @@
         font-size: 14px;
         line-height: 17px;
         text-align: center;
+        margin: 0;
     }
 }
