@@ -25,6 +25,7 @@ buttonClosePopup.addEventListener('click', closePopup);
 const formSubmitHandler = (e) =>{
   e.preventDefault(); //cancel the default event action
   profileSurname.textContent = jobInput.value;
+  profileName.textContent = nameInput.value;
   closePopup();
 };
 const form = document.querySelector('.popup__info');
