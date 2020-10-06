@@ -8,7 +8,8 @@
     border-right: none;
 }
 
-@media screen and (max-width: 320px) {
+
+@media screen and (max-width: 588px) {
     .popup__container{
         width: 282px;
         

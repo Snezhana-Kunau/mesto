@@ -1,17 +1,17 @@
 const popup = document.querySelector('.popup');
 const buttonOpenPopup = document.querySelector('.button_type_editor');
-const opened = document.querySelector('.popup_opened');
-const nameInput = document.querySelector('.popup_type_name');
-const jobInput = document.querySelector('.popup_type_secondname');
+
+const nameInput = document.querySelector('.popup__item_type_name');
+const jobInput = document.querySelector('.popup__item_type_secondname');
 const buttonClosePopup = document.querySelector('.button_type_close');
 const profileName = document.querySelector('.profile__name');
 const profileSurname = document.querySelector('.profile__surname');
 
 
 function openPopup (){
-  popup.classList.add("popup_opened");
   nameInput.value = profileName.textContent; 
   jobInput.value = profileSurname.textContent;
+  popup.classList.add("popup_opened");
 }
 
 function closePopup(){

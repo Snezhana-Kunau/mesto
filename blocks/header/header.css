@@ -1,12 +1,13 @@
 .header {
     max-width: 882px;
-    margin: 45px 199px 40px;
+    margin: 45px auto 40px;
     /*outline: coral 1px solid;*/
-    border-bottom: 1px solid rgba(84, 84, 84, 1);
+    border-bottom: 1px solid #545454;
 }
 
 @media screen and (max-width: 768px) {
     .header{
-        margin: 28px 0 40px;
+        margin: 28px auto 40px;
+        max-width: 768px;
     }
 }

@@ -1,20 +1,24 @@
-.popup_type_secondname{
+.popup__item_type_secondname{
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
-    margin-bottom: 13.34px;
-    margin-top: 29.74px;
+    /*margin-bottom: 48px;
+    margin-top: 29.74px;*/
     width: 80%;
     border: none;
-    padding: 0;
+    padding-bottom: 13.34px;
     margin-left: 35px;
+    border-right: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 @media screen and (max-width: 320px) {
-    .popup_type_secondname{
+    .popup__item_type_secondname{
         width: 80%;
         margin: 0 22px 13px;
     }
