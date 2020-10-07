@@ -16,6 +16,10 @@
     
 }
 
+.popup__item:nth-last-child(2) {
+    margin-bottom: 0;
+}
+
 .popup__item:active {
     border: none;
 }
