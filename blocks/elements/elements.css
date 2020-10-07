@@ -2,3 +2,21 @@
     max-width: 882px;
     margin: 0 auto;
 }
+
+@media screen and (max-width: 875px){
+    .elements{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 345px){
+    .elements{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .elements{
+        width: 100%;
+    }
+}

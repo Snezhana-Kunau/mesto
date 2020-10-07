@@ -9,6 +9,13 @@
     }
 }
 
+@media screen and (max-width: 543px){
+    .logo {
+        max-width: 123px;
+        margin-left: 30px;
+    }
+}
+
 @media screen and (max-width: 320px){
     .logo {
         max-width: 103.74px;
