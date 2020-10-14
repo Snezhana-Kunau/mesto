@@ -21,11 +21,11 @@
         </section>
         <main class="elements">
           <div class="cards">
-            <article class="card">
+            <!--<article class="card">
               <img class="card__image" src="./images/Карачаевск.jpg" alt="пейзаж">
               <div class="card__content">
                 <h2 class="card__text">Карачаевск</h2>
-                <button class="button button_type_like" type="button"><img class="card__like" src="./images/лайк.svg" alt="лайк"></button>
+                <button class="button button_type_like" type="button"></button>
               </div>
             </article>
             <article class="card">
@@ -62,7 +62,7 @@
                 <h2 class="card__text">Карачаево-Черкесская</h2>
                 <button class="button button_type_like" type="button"><img class="card__like" src="./images/лайк.svg" alt="лайк"></button>
               </div>
-            </article>
+            </article>-->
           </div>
         </main>
         <footer class="footer">
@@ -70,8 +70,7 @@
         </footer>
         <section class="popup">
           <div class="popup__content">
-            <button class="button button_type_close" type="button">
-              <img class="popup__close-icon" src="./images/крестичек.svg" alt="закрыть"></button>
+            <button class="button button_type_close" type="button"></button>
           <div class="popup__container">
             <form class="popup__info" name="form">
               <fieldset class="popup__info-text">
@@ -83,7 +82,42 @@
             </form>
           </div>
         </div>
-        </section> 
+        </section>
+
+        <section class="popup-add">
+          <div class="popup-add__content">
+            <button class="button-add button-add_type_close" type="button"></button>
+          <div class="popup-add__container">
+            <form class="popup-add__info" name="form">
+              <fieldset class="popup-add__info-text">
+                <h2 class="popup-add__heading">Новое место</h2>
+                <input type="text" class="popup-add__item popup-add__item_type_name" name="place" placeholder="Название">
+                <input type="text" class="popup-add__item popup-add__item_type_secondname" name="adress" placeholder="Ссылка на картинку">
+                <button class="popup-add__submit-button" type="submit">Создать</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        </section>
+
+        <section class="popup-img">
+          <div class="popup-img__container">
+            <button class="button-img button-img_type_close"></button>
+            <img class="popup-img__picture">
+            <p class="popup-img__text"></p>
+          </div>
+        </section>
+        
+        <template id="template">
+          <article class="card">
+            <img class="card__image" alt="пейзаж">
+            <button class="button  button_type_delit"></button>
+            <div class="card__content">
+              <h2 class="card__text"></h2>
+              <button class="button button__like" type="button"></button>
+            </div>
+          </article>
+        </template>
         <script src="scripts/index.js"></script>
     </body>
 </html>

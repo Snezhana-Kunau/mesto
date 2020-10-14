@@ -1,0 +1,23 @@
+.button-img_type_close{
+    margin-left: 100%;
+    background-image: url('../../../images/крестичек.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    background-color: black;
+    border: none;
+    padding: 0;
+}
+
+.button-img_type_close:hover{
+    opacity: .5;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 540px){
+    .button-img_type_close{
+        max-width: 30px;
+        height: 30px;
+    }
+}

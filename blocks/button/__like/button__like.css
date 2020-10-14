@@ -1,0 +1,16 @@
+.button__like{
+    min-width: 20.76px;
+    min-height: 18.13px;
+    /*box-sizing: border-box;*/
+    padding: 0;
+    border: none;
+    background-image: url("../../../images/лайк.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+
+.button__like:hover{
+    opacity: .8;
+    cursor: pointer;
+}

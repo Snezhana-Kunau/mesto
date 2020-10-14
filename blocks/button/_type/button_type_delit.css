@@ -1,0 +1,16 @@
+.button_type_delit{
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    background-image: url('../../../images/корзина.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 18px;
+    height: 19.3px;
+    border: none;
+}
+
+.button_type_delit:hover{
+    opacity: .5;
+    cursor: pointer;
+}
