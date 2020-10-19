@@ -1,5 +1,4 @@
 .button-img_type_close{
-    margin-left: 100%;
     background-image: url('../../../images/крестичек.svg');
     background-position: center;
     background-repeat: no-repeat;
@@ -8,6 +7,9 @@
     background-color: black;
     border: none;
     padding: 0;
+    position: absolute;
+    top: -40px;
+    right: -40px;
 }
 
 .button-img_type_close:hover{

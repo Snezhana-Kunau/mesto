@@ -1,0 +1,6 @@
+.popup__fullscreen{
+    background-position: center;
+    margin: 90px auto;
+    /*width: 65%;*/
+    position: relative;
+}
