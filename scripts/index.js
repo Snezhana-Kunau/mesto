@@ -101,7 +101,7 @@ const removeCards = (e) => {
 
 
 //лайки
-function likeAddActive (e){
+function addLikeActive (e){
   e.target.classList.toggle('button__like_type_active');
 }
 
@@ -119,7 +119,7 @@ function addCard (nameValue, linkValue) {
     togglePopup(popupTypeImage);
   });
   card.querySelector('.button_type_delit').addEventListener('click', removeCards);
-  card.querySelector('.button__like').addEventListener('click', likeAddActive);
+  card.querySelector('.button__like').addEventListener('click', addLikeActive);
   return card;
 }
 
