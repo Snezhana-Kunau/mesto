@@ -20,50 +20,7 @@
             <button class="button button_type_add-button" type="button"><img class="profile__add-button-img" src="./images/плюсик.svg" alt="картинка добавить"></button>
         </section>
         <main class="elements">
-          <div class="cards">
-            <!--<article class="card">
-              <img class="card__image" src="./images/Карачаевск.jpg" alt="пейзаж">
-              <div class="card__content">
-                <h2 class="card__text">Карачаевск</h2>
-                <button class="button button_type_like" type="button"></button>
-              </div>
-            </article>
-            <article class="card">
-              <img class="card__image" src="./images/Домбай.jpg" alt="пейзаж">
-              <div class="card__content">
-                <h2 class="card__text">Домбай</h2>
-                <button class="button button_type_like" type="button"><img class="card__like" src="./images/лайк.svg" alt="лайк"></button>
-              </div>
-            </article>
-            <article class="card">
-              <img class="card__image" src="./images/Эльбрус.jpg" alt="пейзаж">
-              <div class="card__content">
-                <h2 class="card__text">Гора Эльбрус</h2>
-                <button class="button button_type_like" type="button"><img class="card__like" src="./images/лайк.svg" alt="лайк"></button>
-              </div>
-            </article>
-            <article class="card">
-              <img class="card__image" src="./images/Домбай.jpg" alt="пейзаж">
-              <div class="card__content">
-                <h2 class="card__text">Домбай</h2>
-                <button class="button button_type_like" type="button"><img class="card__like" src="./images/лайк.svg" alt="лайк"></button>
-              </div>
-            </article>
-            <article class="card">
-              <img class="card__image" src="./images/Эльбрус.jpg" alt="пейзаж">
-              <div class="card__content">
-                <h2 class="card__text">Гора Эльбрус</h2>
-                <button class="button button_type_like" type="button"><img class="card__like" src="./images/лайк.svg" alt="лайк"></button>
-              </div>
-            </article>
-            <article class="card">
-              <img class="card__image" src="./images/Карачаевск.jpg" alt="пейзаж">
-              <div class="card__content">
-                <h2 class="card__text">Карачаево-Черкесская</h2>
-                <button class="button button_type_like" type="button"><img class="card__like" src="./images/лайк.svg" alt="лайк"></button>
-              </div>
-            </article>-->
-          </div>
+          <div class="cards"></div>
         </main>
         <footer class="footer">
           <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
@@ -72,11 +29,13 @@
           <div class="popup__content">
             <button class="button button_type_close" type="button"></button>
           <div class="popup__container">
-            <form class="popup__info popup__info_type_profile" name="form">
+            <form class="popup__info popup__info_type_profile" name="form" novalidate>
               <fieldset class="popup__info-text">
                 <h2 class="popup__heading">Редактировать профиль</h2>
-                <input type="text" class="popup__item popup__item_type_name" name="Zhak-Iv">
-                <input type="text" class="popup__item popup__item_type_secondname" name="job">
+                <input type="text" class="popup__item popup__item_type_name" id="user-name" name="user-name" required minlength="2" maxlength="40">
+                <span id="user-name-error" class="popup__error"></span>
+                <input type="text" class="popup__item popup__item_type_secondname" id="about" name="about" required minlength="2" maxlength="200">
+                <span id="about-error" class="popup__error"></span>
                 <button class="popup__submit-button" type="submit">Сохранить</button>
               </fieldset>
             </form>
@@ -88,11 +47,13 @@
           <div class="popup__content">
             <button class="button-add button-add_type_close" type="button"></button>
           <div class="popup__container">
-            <form class="popup__info popup__info_type_cards" name="form">
+            <form class="popup__info popup__info_type_cards" name="form" novalidate>
               <fieldset class="popup__info-text">
                 <h2 class="popup__heading">Новое место</h2>
-                <input type="text" class="popup__item popup__item_type_place" name="place" placeholder="Название">
-                <input type="text" class="popup__item popup__item_type_adress" name="adress" placeholder="Ссылка на картинку">
+                <input type="text" class="popup__item popup__item_type_place" id="place" name="place" placeholder="Название" required minlength="2" maxlength="30">
+                <span id="place-error" class="popup__error"></span>
+                <input type="url" class="popup__item popup__item_type_adress" id="adress" name="adress" placeholder="Ссылка на картинку" required>
+                <span id="adress-error" class="popup__error"></span>
                 <button class="popup__submit-button" type="submit">Создать</button>
               </fieldset>
             </form>
@@ -118,6 +79,7 @@
             </div>
           </article>
         </template>
+        <script src="./scripts/validate.js"></script>
         <script src="scripts/index.js"></script>
     </body>
 </html>
