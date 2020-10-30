@@ -1,7 +1,7 @@
 //const errorMessages = {
 //    nameError: 'Напишите название места длиной 2 буквы минимум'
 //}
-console.log("приветики")
+//console.log("приветики")
 
 
 

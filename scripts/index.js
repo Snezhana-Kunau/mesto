@@ -8,6 +8,7 @@ const buttonOpenPopup = document.querySelector('.button_type_editor');
 const addButton = document.querySelector('.button_type_add-button');
 const popupTypeEditForm = document.querySelector('.popup_type_edit-form');
 const popupTypeAddCards = document.querySelector('.popup_type_add-cards');
+const buttonElement = document.querySelector('.popup__submit-button');
 
 //закрытие попапов
 const buttonClosePopup = document.querySelector('.button_type_close');
@@ -67,19 +68,27 @@ const initialCards = [
 
 const togglePopup = function(popup) {
   popup.classList.toggle('popup_opened');
-  document.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-      togglePopup(popup);
-    };
-  });
+  if (popup.classList.contains("popup_opened")){
+    document.addEventListener('keydown', closePopupEsc)
+  } else{
+    document.removeEventListener('keydown', closePopupEsc)
+  }
 
   popup.addEventListener('click', (evt) => {
     if(evt.target === evt.currentTarget){
       togglePopup(popup);
     }
-  })
-  
+  });
+
 };
+
+
+const closePopupEsc = (evt) =>{
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    openedPopup.classList.remove('popup_opened')
+}
+}
 
 //открытие попапов
 addButton.addEventListener('click', function(){
@@ -89,7 +98,6 @@ addButton.addEventListener('click', function(){
 buttonOpenPopup.addEventListener('click', function(){
   nameInput.value = profileName.textContent;
   jobInput.value = profileSurname.textContent;
-  const buttonElement = document.querySelector('.popup__submit-button');
   buttonElement.classList.remove('popup__submit-button_disabled');
   togglePopup(popupTypeEditForm);
 });
@@ -97,11 +105,6 @@ buttonOpenPopup.addEventListener('click', function(){
 //закрытие попапов
 buttonImgClosePopup.addEventListener('click', function(){
   togglePopup(popupTypeImage);
-  document.removeEventListener('keydown', (evt) => {
-    if (evt.key === 'Escape') {
-      togglePopup(popup);
-    };
-  });
 });
 
 buttonClosePopupAdd.addEventListener('click', function(){
@@ -174,5 +177,3 @@ const submitCardForm = (e) =>{
 };
 const formCard = document.querySelector('.popup__info_type_cards');
 formCard.addEventListener('submit', submitCardForm);
-
-
