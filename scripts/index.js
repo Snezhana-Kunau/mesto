@@ -1,4 +1,5 @@
 import {  Card } from './card.js';
+import { FormValidator } from './FormValidator.js';
 //const popup = document.querySelectorAll('.popup');
 const nameInput = document.querySelector('.popup__item_type_name');
 const jobInput = document.querySelector('.popup__item_type_secondname');
@@ -128,17 +129,16 @@ buttonClosePopup.addEventListener('click', function(){
 /* function addLikeActive (e){
   e.target.classList.toggle('button__like_type_active');
 } */
-
-/*  cardImage.addEventListener('click', function(e){
+const openPopupImg = (e) => {
   popupImgBigPicture.src = e.target.src;
   popupImgBigPicture.alt = e.target.alt;
   popupImgText.textContent = e.target.alt
   togglePopup(popupTypeImage);
-  
-});  */
+}; 
+cardContainer.addEventListener('click', openPopupImg)
 
-function addCard (/*nameValue, linkValue*/) {
-  const card = new Card (item, '#template');
+//function addCard (/*nameValue, linkValue*/) {
+  //const card = new Card (item, '#template');
   
   /*const card = template.cloneNode(true);
   card.querySelector('.card__text').textContent = nameValue;
@@ -151,31 +151,22 @@ function addCard (/*nameValue, linkValue*/) {
     togglePopup(popupTypeImage);
   });
   card.querySelector('.button_type_delit').addEventListener('click', removeCards);
-  card.querySelector('.button__like').addEventListener('click', addLikeActive); */
+  card.querySelector('.button__like').addEventListener('click', addLikeActive); 
   return card;
-} 
+}*/ 
 
 //добавление карточки
 /*function addCardList (nameValue, linkValue){
   cardContainer.prepend(addCard(nameValue, linkValue));
 }; */
 function addCardList (data){
-  const card = new Card (data, '#template');
+  const card = new Card (data.link, data.name, '#template');
   const cardElement = card.generateCard();
   cardContainer.prepend(cardElement);
 }
 //рендер карточек на экран
-function renderCards () {
   initialCards.forEach(element => addCardList(element));
-}
-renderCards(); 
 
-/* const openPopupImg = ()=> {
-  this._element.src = this._link;
-  this._element.alt = this._name;
-  //popupImgText.textContent = this._name
-  this._popupImgBigPicture.classList.add('popup_opened');
-} */
 
 
 const submitProfileForm = (e) =>{
@@ -189,10 +180,13 @@ formProfile.addEventListener('submit', submitProfileForm);
 
 const submitCardForm = (e) =>{
   e.preventDefault(); //cancel the default event action
-  addCardList(place.value, adress.value)
+  addCardList({name: place.value, link: adress.value})
   togglePopup(popupTypeAddCards);
   place.value = '';
   adress.value = '';
 };
 const formCard = document.querySelector('.popup__info_type_cards');
 formCard.addEventListener('submit', submitCardForm);
+
+const formValidator = new FormValidator;
+formValidator.enableValidation();
