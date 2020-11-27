@@ -1,5 +1,5 @@
 const popupElement = document.querySelector('.popup');
-//const buttonImgClosePopup = document.querySelector('.button-img_type_close');
+
 const buttonTypeDelit = document.querySelector('.button_type_delit');
 const buttonLike = document.querySelector('.button__like');
 const popupImgBigPicture = document.querySelector('.popup__picture');
@@ -32,16 +32,16 @@ const initialCards = [
 ];
 
 export class Card {
-    constructor(link, name, templateElement){
+    constructor(link, name, templateSelector, openPopupImg){
         this._link = link;
         this._name = name;
-        this._templateElement = templateElement;
-        //this._openPopupImg = openPopupImg;
+        this._templateSelector = templateSelector;
+        this._openPopupImg = openPopupImg;
         
     }
     
     _getTemplate() {
-        const element = document.querySelector(this._templateElement)
+        const element = document.querySelector(this._templateSelector)
         .content
         .querySelector('.card')
         .cloneNode(true);
@@ -51,7 +51,7 @@ export class Card {
 
 
     generateCard(){
-        this._element = document.querySelector(this._templateElement)
+        this._element = document.querySelector(this._templateSelector)
         .content
         .querySelector('.card')
         .cloneNode(true);
@@ -66,8 +66,10 @@ export class Card {
 
     _setEventListeners(){  
 
-        this._element.querySelector('.button_type_delit').addEventListener('click', (evt) => {
-            this._removeCards(evt)});
+        this._element.querySelector('.button_type_delete').addEventListener('click', (evt) => {
+            this._removeCard(evt)});
+
+        this._cardPhoto.addEventListener('click', this._openPopupImg)
 
         this._element.querySelector('.button__like').addEventListener('click', (evt) => {
             this._addLikeActive(evt)}); 
@@ -77,34 +79,11 @@ export class Card {
         evt.target.classList.toggle('button__like_type_active');
     }
 
-    _removeCards (evt) {
+    _removeCard (evt) {
         evt.target.closest('.card').remove(); 
     };
-
-    _closeImageEscape = (evt) => {
-        if (evt.key === "Escape") {
-            document.querySelector('.popup_type_image').classList.remove('popup_opened');
-            document.removeEventListener('keydown', this._closeImageEscape);
-        }
-    }
-
-    
-    
 };
 
-/* const openPopupImg = ()=> {
-    this._element.src = this._link;
-    this._element.alt = this._name;
-    //popupImgText.textContent = this._name
-    this._popupImgBigPicture.classList.add('popup_opened');
-} */ 
 
-
-/* initialCards.forEach((item) =>{
-        const card = new Card(item, '.template')
-        const cardElement = card.generateCard();
-
-        document.querySelector('.cards').prepend(cardElement);
-});  */
 
 

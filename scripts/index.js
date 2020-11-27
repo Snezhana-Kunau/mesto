@@ -1,4 +1,4 @@
-import {  Card } from './card.js';
+import {  Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
 //const popup = document.querySelectorAll('.popup');
 const nameInput = document.querySelector('.popup__item_type_name');
@@ -25,13 +25,7 @@ const profileSurname = document.querySelector('.profile__surname');
 const place = document.querySelector('.popup__item_type_place');
 const adress = document.querySelector('.popup__item_type_adress');
 const cardContainer = document.querySelector('.cards');
-const buttonLike = document.querySelector('.button__like');
-const buttonTypeDelit = document.querySelector('.button_type_delit');
-//const cards = document.querySelector('.cards');
 
-const template = document.querySelector('#template').content;
-const input = document.querySelector('.card__text');
-const cardImage = document.querySelector('.card__image');
 const popupTypeImage = document.querySelector('.popup_type_image');
 
 const popupImgBigPicture = document.querySelector('.popup__picture');
@@ -76,13 +70,16 @@ const initialCards = [
     document.removeEventListener('keydown', closePopupEsc)
   }
 
+}; 
+
+const popups = document.querySelectorAll('.popup')
+popups.forEach((popup) => {
   popup.addEventListener('click', (evt) => {
     if(evt.target === evt.currentTarget){
       togglePopup(popup);
     }
   });
-
-}; 
+})
 
 
 const closePopupEsc = (evt) =>{
@@ -100,7 +97,7 @@ addButton.addEventListener('click', function(){
 buttonOpenPopup.addEventListener('click', function(){
   nameInput.value = profileName.textContent;
   jobInput.value = profileSurname.textContent;
-  buttonElement.classList.remove('popup__submit-button_disabled');
+  //buttonElement.classList.remove('popup__submit-button_disabled');
   togglePopup(popupTypeEditForm);
 });
 
@@ -117,56 +114,28 @@ buttonClosePopup.addEventListener('click', function(){
   togglePopup(popupTypeEditForm);
 });
 
-
-//удаление карточек
-/* const removeCards = (e) => {
-  const card = e.target.closest('.card');
-  card.remove();
-}; */ 
-
-
-//лайки
-/* function addLikeActive (e){
-  e.target.classList.toggle('button__like_type_active');
-} */
+//открытие попапа с картинкой большой
 const openPopupImg = (e) => {
   popupImgBigPicture.src = e.target.src;
   popupImgBigPicture.alt = e.target.alt;
   popupImgText.textContent = e.target.alt
   togglePopup(popupTypeImage);
 }; 
-cardContainer.addEventListener('click', openPopupImg)
 
-//function addCard (/*nameValue, linkValue*/) {
-  //const card = new Card (item, '#template');
-  
-  /*const card = template.cloneNode(true);
-  card.querySelector('.card__text').textContent = nameValue;
-  card.querySelector('.card__image').src = linkValue;
-  card.querySelector('.card__image').alt = nameValue;
-  card.querySelector('.card__image').addEventListener('click', function(e){
-    popupImgBigPicture.src = e.target.src;
-    popupImgBigPicture.alt = e.target.alt;
-    popupImgText.textContent = e.target.alt
-    togglePopup(popupTypeImage);
-  });
-  card.querySelector('.button_type_delit').addEventListener('click', removeCards);
-  card.querySelector('.button__like').addEventListener('click', addLikeActive); 
-  return card;
-}*/ 
 
-//добавление карточки
-/*function addCardList (nameValue, linkValue){
-  cardContainer.prepend(addCard(nameValue, linkValue));
-}; */
 function addCardList (data){
-  const card = new Card (data.link, data.name, '#template');
-  const cardElement = card.generateCard();
+  const cardElement = createCard(data);
   cardContainer.prepend(cardElement);
 }
-//рендер карточек на экран
-  initialCards.forEach(element => addCardList(element));
 
+function createCard(data) {
+  const card = new Card (data.link, data.name, '#template', openPopupImg);
+  const cardElement = card.generateCard();
+  return cardElement
+}
+
+//рендер карточек на экран
+ // initialCards.forEach(element => addCardList(element));
 
 
 const submitProfileForm = (e) =>{
@@ -188,5 +157,16 @@ const submitCardForm = (e) =>{
 const formCard = document.querySelector('.popup__info_type_cards');
 formCard.addEventListener('submit', submitCardForm);
 
-const formValidator = new FormValidator;
-formValidator.enableValidation();
+const config = {
+    formSelector: '.popup__info',
+    inputSelector: '.popup__item',
+    submitButtonSelector: '.popup__submit-button',
+    inactiveButtonClass: 'popup__submit-button_disabled',
+    inputErrorClass: 'popup__item_state_invalid',
+    errorClass: 'popup__error',
+}
+
+const cardValidator = new FormValidator(config, formCard)
+cardValidator.enableValidation()
+const profileValidator = new FormValidator(config, formProfile)
+profileValidator.enableValidation()
