@@ -123,7 +123,7 @@ const openPopupImg = (e) => {
 }; 
 
 
-function addCardList (data){
+function addCard (data){
   const cardElement = createCard(data);
   cardContainer.prepend(cardElement);
 }
@@ -135,7 +135,7 @@ function createCard(data) {
 }
 
 //рендер карточек на экран
- // initialCards.forEach(element => addCardList(element));
+  initialCards.forEach(element => addCard(element));
 
 
 const submitProfileForm = (e) =>{
@@ -149,7 +149,7 @@ formProfile.addEventListener('submit', submitProfileForm);
 
 const submitCardForm = (e) =>{
   e.preventDefault(); //cancel the default event action
-  addCardList({name: place.value, link: adress.value})
+  addCard({name: place.value, link: adress.value})
   togglePopup(popupTypeAddCards);
   place.value = '';
   adress.value = '';
