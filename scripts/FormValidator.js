@@ -1,30 +1,24 @@
 export class FormValidator {
     constructor (config, formElement){
         this._formElement = formElement;
-        this._formSelector = config.formSelector //'.popup__info',
-        this._inputSelector = config.inputSelector //'.popup__item',
-        this._submitButtonSelector = config.submitButtonSelector //'.popup__submit-button',
-        this._inactiveButtonClass = config.inactiveButtonClass //'popup__submit-button_disabled',
-        this._inputErrorClass = config.inputErrorClass //'popup__item_state_invalid',
-        this._errorClass = config.errorClass //'popup__error'
+        this._formSelector = config.formSelector 
+        this._inputSelector = config.inputSelector 
+        this._submitButtonSelector = config.submitButtonSelector 
+        this._inactiveButtonClass = config.inactiveButtonClass 
+        this._inputErrorClass = config.inputErrorClass 
+        this._errorClass = config.errorClass 
     }
 
     enableValidation () {
-        const formList = Array.from(document.querySelectorAll(this._formSelector));
-    
-        formList.forEach((form) => {
-            form.addEventListener('submit', (evt) => {
-                evt.preventDefault();
-            });
-            
-            const buttonElement = form.querySelector(this._submitButtonSelector);
-    
-            this._setEventListeners(form, buttonElement);
-            this._toggleButtonState(buttonElement, form.checkValidity())
-            
-            
+        this._formElement.addEventListener('submit', (evt) => {
+            evt.preventDefault();
         });
-        }
+
+        const buttonElement = this._formElement.querySelector(this._submitButtonSelector);
+
+        this._setEventListeners(this._formElement, buttonElement);
+        this._toggleButtonState(buttonElement, this._formElement.checkValidity())
+    }
 
     _showError(inputElements) {
     const errorElement = document.querySelector(`#${inputElements.id}-error`);

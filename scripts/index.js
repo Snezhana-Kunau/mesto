@@ -1,6 +1,6 @@
 import {  Card } from './Card.js';
 import { FormValidator } from './FormValidator.js';
-//const popup = document.querySelectorAll('.popup');
+
 const nameInput = document.querySelector('.popup__item_type_name');
 const jobInput = document.querySelector('.popup__item_type_secondname');
 
@@ -10,7 +10,7 @@ const buttonOpenPopup = document.querySelector('.button_type_editor');
 const addButton = document.querySelector('.button_type_add-button');
 const popupTypeEditForm = document.querySelector('.popup_type_edit-form');
 const popupTypeAddCards = document.querySelector('.popup_type_add-cards');
-const buttonElement = document.querySelector('.popup__submit-button');
+
 
 //закрытие попапов
 const buttonClosePopup = document.querySelector('.button_type_close');
@@ -30,7 +30,7 @@ const popupTypeImage = document.querySelector('.popup_type_image');
 
 const popupImgBigPicture = document.querySelector('.popup__picture');
 const popupImgText = document.querySelector('.popup__text');
-const popupFullscreen = document.querySelector('.popup__fullscreen');
+
 
 
 
